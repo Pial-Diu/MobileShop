@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB_MOBILE_SHOP" Class="LinqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-QPN61SP;Initial Catalog=DB_MOBILE_SHOP;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DB_MOBILE_SHOPConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.COUNTRY" Member="COUNTRies">
+    <Type Name="COUNTRY">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="COUNTRY_STATE" Member="STATEs" ThisKey="ID" OtherKey="COUNTRYID" Type="STATE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.STATE" Member="STATEs">
+    <Type Name="STATE">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="COUNTRYID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="COUNTRY_STATE" Member="COUNTRY" ThisKey="COUNTRYID" OtherKey="ID" Type="COUNTRY" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_CUSTOMER" Member="TBL_CUSTOMERs">
+    <Type Name="TBL_CUSTOMER">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CNAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CGENDER" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="CEMAIL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CPASSWORD" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CPHONE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CCOUNTRY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CSTATE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CADDRESS" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="CDOB" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CJOINDATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CQUESTION" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="CANSWER" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PRODUCT" Member="PRODUCTs">
+    <Type Name="PRODUCT">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PBRAND" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PMODEL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PIMAGE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PWARRANTY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PPRICE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PDATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PCAMBACK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PCAMFRONT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PRAM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PROM" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PPROCESSOR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="POS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PBATTERY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PDISPLAY" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,114 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainSite.master.cs" Inherits="PresentationLayer.MainSite" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server" style="height:auto;width:90%;margin-left:5%">
+        
+        <table style="width:100%;height:100px">
+              <tr>
+                <td style="background-color:;width:30%;">
+                    <asp:Image id="Image1" runat="server" AlternateText="Mobile Shop" ImageAlign="left" ImageUrl="images/logo.png"/>
+                </td>
+                <td style="">
+                    <div style="background-color:;height:25px;width:50px;margin-left:720px;margin-top:75px">
+                       <a href="login.aspx" runat="server" style="height:100%;width:100%;text-decoration: none;">
+                        <div style="width:100%;height:100%;font-weight:bold;color:#445F9D;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+                            
+                            <% if (Session["User"] != null)
+                                { %>
+                            
+                                <u><% Response.Write(Session["UserName"]); %></u>
+                                <asp:Button ID="Button1" BackColor="#23527C" ForeColor="White" runat="server" Text="Log-Out" OnClick="Button1_Click" />
+                            <% } %>
+                            <% else{ %>
+                                <u>Sign In</u>
+                            <%} %>
+                        </div>
+                       </a>
+                    </div>
+                </td>
+              </tr>
+        </table>
+        
+        <style>
+          .menu:hover {background-color: #C7C7C9;}
+        </style>
+
+        <table style="width:100%;height:40px">
+              <tr>
+                  <td class="menu" style="background-color:;width:20%;text-align:center;border:2px solid #F27036;border-radius:10px">
+                    <a href="~/Home.aspx" runat="server" style="height:100%;width:100%;text-decoration: none;">
+                        <div style="width:100%;height:100%;font-weight:bold;color:#818384">
+                            Home
+                        </div>
+                    </a>
+                </td>
+                 <td class="menu" style="background-color:;width:20%;text-align:center;border:2px solid #F27036;border-radius:10px">
+                    <a href="https://www.facebook.com" runat="server" style="height:100%;width:100%;text-decoration: none;">
+                        <div style="width:100%;height:100%;font-weight:bold;color:#818384">
+                            Brands
+                        </div>
+                    </a>
+                </td>
+                  <td class="menu" style="background-color:;width:20%;text-align:center;border:2px solid #F27036;border-radius:10px">
+                    <a href="~/Admin/Dashboard.aspx" runat="server" style="height:100%;width:100%;text-decoration: none;">
+                        <div style="width:100%;height:100%;font-weight:bold;color:#818384">
+                            New Arrival
+                        </div>
+                    </a>
+                </td>
+                <td class="menu" style="background-color:;width:20%;text-align:center;border:2px solid #F27036;border-radius:10px">
+                    <a href="~/AboutUs.aspx" runat="server" style="height:100%;width:100%;text-decoration: none;">
+                        <div style="width:100%;height:100%;font-weight:bold;color:#818384">
+                            About Us
+                        </div>
+                    </a>
+                </td>
+                  <td class="menu" style="background-color:;width:20%;text-align:center;border:2px solid #F27036;border-radius:10px">
+                    <a href="~/ContactUs.aspx" runat="server" style="height:100%;width:100%;text-decoration: none;">
+                        <div style="width:100%;height:100%;font-weight:bold;color:#818384">
+                            Contact Us
+                        </div>
+                    </a>
+                </td>
+                  
+              </tr>
+        </table>
+        <table style="width:100%;height:300px">
+              <tr>
+                <td style="">
+                 <asp:Image id="Image2" runat="server" AlternateText="Mobile Shop" ImageAlign="left" ImageUrl="images/banner.jpg" Height="100%" Width="100%"/>
+                </td>
+              </tr>
+        </table>
+
+
+
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"> </asp:ContentPlaceHolder>
+
+
+
+
+
+        <hr/>
+        
+        <table style="width:100%;height:50px">
+              <tr>
+                <td style="background-color:; text-align:center;font-style:oblique;color:#F26F36">
+                    Copyright (C) Anonymous<sup>TM</sup> |  All Right Reserved - 2017<br/>
+                    LICT Top-up - DOT.NET
+                </td>
+              </tr>
+        </table>
+        
+    </form>
+</body>
+</html>

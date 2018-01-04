@@ -1,0 +1,10 @@
+C:\Users\pialc\source\repos\Mobile_Shop\MobileShop.BusinessLayer\bin\Debug\MobileShop.BusinessLayer.dll
+C:\Users\pialc\source\repos\Mobile_Shop\MobileShop.BusinessLayer\bin\Debug\MobileShop.BusinessLayer.pdb
+C:\Users\pialc\source\repos\Mobile_Shop\MobileShop.BusinessLayer\obj\Debug\MobileShop.BusinessLayer.csprojResolveAssemblyReference.cache
+C:\Users\pialc\source\repos\Mobile_Shop\MobileShop.BusinessLayer\obj\Debug\MobileShop.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\pialc\source\repos\Mobile_Shop\MobileShop.BusinessLayer\obj\Debug\MobileShop.BusinessLayer.dll
+C:\Users\pialc\source\repos\Mobile_Shop\MobileShop.BusinessLayer\obj\Debug\MobileShop.BusinessLayer.pdb
+C:\Users\pialc\source\repos\Mobile_Shop\MobileShop.BusinessLayer\bin\Debug\MobileShop.EntityLayer.dll
+C:\Users\pialc\source\repos\Mobile_Shop\MobileShop.BusinessLayer\bin\Debug\MobileShop.EntityLayer.pdb
+C:\Users\pialc\source\repos\Mobile_Shop\MobileShop.BusinessLayer\bin\Debug\MobileShob.DataAccessLayer.dll
+C:\Users\pialc\source\repos\Mobile_Shop\MobileShop.BusinessLayer\bin\Debug\MobileShob.DataAccessLayer.pdb

@@ -1,0 +1,6 @@
+C:\Users\pialc\source\repos\Mobile_Shop\MobileShob.DataAccessLayer\obj\Debug\MobileShob.DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\Users\pialc\source\repos\Mobile_Shop\MobileShob.DataAccessLayer\obj\Debug\MobileShob.DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\pialc\source\repos\Mobile_Shop\MobileShob.DataAccessLayer\bin\Debug\MobileShob.DataAccessLayer.dll
+C:\Users\pialc\source\repos\Mobile_Shop\MobileShob.DataAccessLayer\bin\Debug\MobileShob.DataAccessLayer.pdb
+C:\Users\pialc\source\repos\Mobile_Shop\MobileShob.DataAccessLayer\obj\Debug\MobileShob.DataAccessLayer.dll
+C:\Users\pialc\source\repos\Mobile_Shop\MobileShob.DataAccessLayer\obj\Debug\MobileShob.DataAccessLayer.pdb

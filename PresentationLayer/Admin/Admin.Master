@@ -1,0 +1,212 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="PresentationLayer.Admin.Admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="vendor/metisMenu/metisMenu.min.css" rel="stylesheet" />
+    <link href="dist/css/sb-admin-2.min.css" rel="stylesheet" />
+    <link href="vendor/morrisjs/morris.css" rel="stylesheet" />
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server" style="">
+        <div id="wrapper">
+
+            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="Dashboard.aspx">Mobile Shop Online</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                
+                <li class="dropdown">
+                    
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <% Response.Write(Session["AdminName"]); %>
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a  href="{{url('/admin/profile/'.Auth::user()->id)}}"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <asp:Button ID="Button1" Height="100%" Width="100%" BackColor="#23527C" ForeColor="White" runat="server" Text="Log-Out" OnClick="Button1_Click1" />
+                        
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+                <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                            </div>
+                            <!-- /input-group -->
+                        </li>
+                        <li>
+                            <a href="Dashboard.aspx"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                         
+                        <li>
+                            <a href="#"><i class="fa fa-globe fa-fw"></i> Country & State<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="ManageCountry.aspx"><i class="fa fa-flag-checkered fa-fw"></i> Country</a>
+                                </li>
+                                <li>
+                                    <a href="ManageState.aspx"><i class="fa fa-sitemap fa-fw"></i> State</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="ManageManufacturer.aspx"><i class="fa fa-line-chart fa-fw"></i> Manufacturer</a>
+                        </li>
+                        <%--<li>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> State<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="{{url('subject/add')}}"><i class="fa fa-plus-circle fa-fw"></i> Add State</a>
+                                </li>
+                                <li>
+                                    <a href="{{url('subject/manage')}}"><i class="fa fa-edit fa-fw"></i> Manage State</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>--%>
+                        <li>
+                            <a href="#"><i class="fa fa-mobile fa-fw"></i> Product<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="AddProduct.aspx"><i class="fa fa-plus-circle fa-fw"></i> Add Product</a>
+                                </li>
+                                <li>
+                                    <a href="ManageProduct.aspx"><i class="fa fa-edit fa-fw"></i> Manage Products</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="FeedBack.aspx"><i class="fa fa-commenting fa-fw"></i> Feedback</a>
+                        </li>
+                        <%--<li>
+                            <a href="#"><i class="fa fa-bank fa-fw"></i> Question Bank<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                
+                                <li>
+                                    <a href="#"><i class="fa fa-hand-o-right fa-fw"></i> Broad Question <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href="{{url('broad-question/add')}}"><i class="fa fa-plus-circle fa-fw"></i> Add</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{url('broad-question/manage')}}"><i class="fa fa-edit fa-fw"></i> Manage</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+                                
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-tags fa-fw"></i> Tags <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="{{url('tag/add')}}"><i class="fa fa-plus-circle fa-fw"></i> Add Tags</a>
+                                </li>
+                                <li>
+                                    <a href="{{url('tag/manage')}}"><i class="fa fa-edit fa-fw"></i> Manage Tags</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>--%>
+                    </ul><br>
+                    <style>
+            .buttonkuks{
+                    background-color: #4CAF50; /* Green */
+                    border: none;
+                    color: white;
+                    padding: 16px 32px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    margin: 4px 2px;
+                    -webkit-transition-duration: 0.4s; /* Safari */
+                    transition-duration: 0.4s;
+                    cursor: pointer;
+                }
+                .button1kuk {
+                    background-color: white; 
+                    color: green; 
+                    border: 2px solid #4CAF50;
+                }
+
+                .button1kuk:hover {
+                    
+                    background-color: #4CAF50;
+                    color: white;       
+                }
+                .button3kuk {
+                    background-color: white; 
+                    color: #F0AD4E; 
+                    border: 2px solid #F0AD4E;
+                }
+
+                .button3kuk:hover {
+                    
+                    background-color: #F0AD4E;
+                    color: white;       
+}
+                    
+                </style>
+                <a href="{{url('/admin/register')}}"><button class="buttonkuks button1kuk" style"width:240px;"><i class="fa fa-user-plus fa-1x"></i><strong> Create New Admin &nbsp</strong></button></a>
+                <a href="{{url('/admin/manage')}}">
+                                <button style="width:240px;" class="buttonkuks button3kuk"><i class="fa fa-cogs fa-1x"></i><strong> Manage Admins</strong></button></a><hr>
+               
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">  </asp:ContentPlaceHolder>
+
+
+            
+        </div>
+    </form>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="vendor/raphael/raphael.min.js"></script>
+    <script src="vendor/morrisjs/morris.min.js"></script>
+    <script src="vendor/morris-data.js"></script>
+    <script src="dist/js/sb-admin-2.js"></script>
+</body>
+</html>

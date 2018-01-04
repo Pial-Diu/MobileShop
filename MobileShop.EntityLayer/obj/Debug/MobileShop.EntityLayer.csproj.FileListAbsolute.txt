@@ -1,0 +1,6 @@
+C:\Users\pialc\source\repos\Mobile_Shop\MobileShop.EntityLayer\bin\Debug\MobileShop.EntityLayer.dll
+C:\Users\pialc\source\repos\Mobile_Shop\MobileShop.EntityLayer\bin\Debug\MobileShop.EntityLayer.pdb
+C:\Users\pialc\source\repos\Mobile_Shop\MobileShop.EntityLayer\obj\Debug\MobileShop.EntityLayer.csprojResolveAssemblyReference.cache
+C:\Users\pialc\source\repos\Mobile_Shop\MobileShop.EntityLayer\obj\Debug\MobileShop.EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\pialc\source\repos\Mobile_Shop\MobileShop.EntityLayer\obj\Debug\MobileShop.EntityLayer.dll
+C:\Users\pialc\source\repos\Mobile_Shop\MobileShop.EntityLayer\obj\Debug\MobileShop.EntityLayer.pdb
