@@ -1,5 +1,9 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Admin/Admin.Master" CodeBehind="ManageCountry.aspx.cs" Inherits="PresentationLayer.Admin.ManageCountry" %>
 
+<asp:Content ContentPlaceHolderID="title" runat="server">
+    Manage Country
+</asp:Content>
+
 <asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     

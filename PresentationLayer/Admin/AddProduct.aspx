@@ -1,5 +1,9 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Admin/Admin.Master" CodeBehind="AddProduct.aspx.cs" Inherits="PresentationLayer.Admin.AddProduct" %>
 
+<asp:Content ContentPlaceHolderID="title" runat="server">
+    Add Product
+</asp:Content>
+
 <asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
@@ -105,7 +109,4 @@
     </div>
     <br/><br/>
 </asp:Content>
-<asp:Content ID="Content1" runat="server" contentplaceholderid="head">
-   
 
-</asp:Content>

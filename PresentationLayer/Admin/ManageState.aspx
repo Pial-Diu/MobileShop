@@ -1,5 +1,9 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Admin/Admin.Master" CodeBehind="ManageState.aspx.cs" Inherits="PresentationLayer.Admin.ManageState" %>
 
+<asp:Content ContentPlaceHolderID="title" runat="server">
+    Manage State
+</asp:Content>
+
 <asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 

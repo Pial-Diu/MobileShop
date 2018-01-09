@@ -1,5 +1,9 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MainSite.Master" CodeBehind="Login.aspx.cs" Inherits="PresentationLayer.Login" %>
 
+<asp:Content ContentPlaceHolderID="head" runat="server">
+    Login
+</asp:Content>
+
 <asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 

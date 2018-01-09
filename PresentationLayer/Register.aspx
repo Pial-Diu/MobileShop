@@ -2,6 +2,10 @@
 
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
 
+<asp:Content ContentPlaceHolderID="head" runat="server">
+    Sign Up
+</asp:Content>
+
 <asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
      <style type="text/css">

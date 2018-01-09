@@ -4,8 +4,10 @@
 
 <html>
 <head runat="server">
-    <title></title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
+    <link rel="shortcut icon" href="images/Archigraphs-Mac-IPhone.ico" type="image/x-icon" />
+    <title><asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder></title>
+    <asp:ContentPlaceHolder ID="heads" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
@@ -16,23 +18,45 @@
                 <td style="background-color:;width:30%;">
                     <asp:Image id="Image1" runat="server" AlternateText="Mobile Shop" ImageAlign="left" ImageUrl="images/logo.png"/>
                 </td>
-                <td style="">
-                    <div style="background-color:;height:25px;width:50px;margin-left:720px;margin-top:75px">
-                       <a href="login.aspx" runat="server" style="height:100%;width:100%;text-decoration: none;">
-                        <div style="width:100%;height:100%;font-weight:bold;color:#445F9D;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+                <td style="width:70%">
+
+                    <table style="height:100%;width:100%">
+                        <tr>
+                            <td style="width:60%;background-color:">  </td>
+                            <td style="width:20%;background-color:">  </td>
+                            <td style="width:20%;background-color:"> 
+                                <% if (Session["User"] != null)
+                                    { %>
+                                <div style="height:70%;width:100%;border:2px solid #F26F36">
+                                    <a href="AddToCart.aspx">
+                                        <asp:Image Height="100%" Width="100%" ID="Image2" runat="server" ImageUrl="images/cart.png" />
+                                        
+                                    </a>
+                                </div>
+                                <%} %>
+                                <%else
+    { %>
+                                <div style="height:70%;width:100%;">
+                                
+                                </div>
+                                <%} %>
+                                <div style="height:30%;width:100%;background-color:;text-align:right;font-weight:bold;font-size:large">
+
+                                    <% if (Session["User"] != null)
+                                    { %>
                             
-                            <% if (Session["User"] != null)
-                                { %>
-                            
-                                <u><% Response.Write(Session["UserName"]); %></u>
-                                <asp:Button ID="Button1" BackColor="#23527C" ForeColor="White" runat="server" Text="Log-Out" OnClick="Button1_Click" />
-                            <% } %>
-                            <% else{ %>
-                                <u>Sign In</u>
-                            <%} %>
-                        </div>
-                       </a>
-                    </div>
+                                    <b style="color:#F26F36;font-size:20px"><% Response.Write(Session["UserName"]); %></b>
+                                    <asp:Button ID="Button1" BackColor="#C7C8C9" ForeColor="#445F9D" runat="server" Text="Log-Out" OnClick="Button1_Click" />
+                                    <% } %>
+                                    <% else{ %>
+                                        <a href="Login.aspx"><u style="color:#445F9D">Sign In</u></a>
+                                    <%} %>
+
+                                </div>
+
+                            </td>
+                        </tr>
+                    </table>
                 </td>
               </tr>
         </table>
@@ -51,14 +75,14 @@
                     </a>
                 </td>
                  <td class="menu" style="background-color:;width:20%;text-align:center;border:2px solid #F27036;border-radius:10px">
-                    <a href="https://www.facebook.com" runat="server" style="height:100%;width:100%;text-decoration: none;">
+                    <a href="~/CustomSearch.aspx" runat="server" style="height:100%;width:100%;text-decoration: none;">
                         <div style="width:100%;height:100%;font-weight:bold;color:#818384">
-                            Brands
+                            Custom Search
                         </div>
                     </a>
                 </td>
                   <td class="menu" style="background-color:;width:20%;text-align:center;border:2px solid #F27036;border-radius:10px">
-                    <a href="~/Admin/Dashboard.aspx" runat="server" style="height:100%;width:100%;text-decoration: none;">
+                    <a href="~/NewArrival.aspx" runat="server" style="height:100%;width:100%;text-decoration: none;">
                         <div style="width:100%;height:100%;font-weight:bold;color:#818384">
                             New Arrival
                         </div>
@@ -81,34 +105,22 @@
                   
               </tr>
         </table>
-        <table style="width:100%;height:300px">
-              <tr>
-                <td style="">
-                 <asp:Image id="Image2" runat="server" AlternateText="Mobile Shop" ImageAlign="left" ImageUrl="images/banner.jpg" Height="100%" Width="100%"/>
-                </td>
-              </tr>
-        </table>
-
-
-
 
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"> </asp:ContentPlaceHolder>
 
 
 
 
-
-        <hr/>
-        
+        <div style="width:100%;">
         <table style="width:100%;height:50px">
               <tr>
-                <td style="background-color:; text-align:center;font-style:oblique;color:#F26F36">
+                <td style="background-color:; text-align:center;font-style:oblique;color:#F26F36;border-top:2px solid #808284">
                     Copyright (C) Anonymous<sup>TM</sup> |  All Right Reserved - 2017<br/>
                     LICT Top-up - DOT.NET
                 </td>
               </tr>
         </table>
-        
+        </div>
     </form>
 </body>
 </html>
