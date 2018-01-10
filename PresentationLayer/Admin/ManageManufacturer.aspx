@@ -17,7 +17,9 @@
             <asp:GridView ID="GridView1" Font-Size="Large" runat="server" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="SqlDataSource1" Width="375px" AllowPaging="True" AllowSorting="True">
                 <Columns>
                     <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="ID" />
-                    <asp:BoundField DataField="MNAME" HeaderText="Brand Name" SortExpression="MNAME" />
+                    <asp:BoundField DataField="MNAME" HeaderText="Brand Name" SortExpression="MNAME" >
+                    <HeaderStyle Height="50px" HorizontalAlign="Center" />
+                    </asp:BoundField>
                     <asp:CommandField HeaderText="Edit" ShowEditButton="True" />
                     <asp:CommandField HeaderText="Delete" ShowDeleteButton="True" />
                 </Columns>

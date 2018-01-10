@@ -12,7 +12,9 @@
         <div style="margin-left:20%">
             <asp:GridView ID="GridView1"  Font-Size="Large"  runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataSourceID="SqlDataSource1" ForeColor="Black" AllowPaging="True">
                 <Columns>
-                    <asp:BoundField DataField="cname" HeaderText="Customer Name" SortExpression="cname" />
+                    <asp:BoundField DataField="cname" HeaderText="Customer Name" SortExpression="cname" >
+                    <HeaderStyle Height="50px" HorizontalAlign="Center" />
+                    </asp:BoundField>
                     <asp:BoundField DataField="response" HeaderText="Feedback" SortExpression="response" />
                     <asp:BoundField DataField="fdate" HeaderText="Date and Time" SortExpression="fdate" />
                 </Columns>

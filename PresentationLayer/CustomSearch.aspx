@@ -42,7 +42,7 @@
         </tr>
     </table>
     <div style="margin-left:35%">
-        <asp:Button ID="Button1" Width="345px" Height="30px" runat="server" Text="Search" Font-Bold="True" Font-Size="Large" ForeColor="#F37037" OnClick="Button1_Click" />
+        <asp:Button ID="Button1" Width="375px" Height="30px" runat="server" Text="Search" Font-Bold="True" Font-Size="Large" ForeColor="#F37037" OnClick="Button1_Click" />
     </div>
     <br>
 

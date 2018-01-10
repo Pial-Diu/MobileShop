@@ -17,7 +17,9 @@
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" DataKeyNames="ID" DataSourceID="SqlDataSource1" ForeColor="Black" AllowPaging="True" AllowSorting="True" Width="993px" GridLines="Vertical">
                 <AlternatingRowStyle BackColor="#CCCCCC" />
                 <Columns>
-                    <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="ID" />
+                    <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="ID" >
+                    <HeaderStyle Height="50px" HorizontalAlign="Center" />
+                    </asp:BoundField>
                     <asp:BoundField DataField="PBRAND" HeaderText="Brand" SortExpression="PBRAND" />
                     <asp:BoundField DataField="PMODEL" HeaderText="Model" SortExpression="PMODEL" />
                     <asp:BoundField DataField="PPRICE" HeaderText="Price" SortExpression="PPRICE" />
