@@ -25,7 +25,11 @@ namespace PresentationLayer.Admin
             DataTable dt = new DataTable();
             da.Fill(dt);
             Con.Close();
-            if (dt.Rows.Count > 0) Session["AdminName"] = dt.Rows[0]["ANAME"].ToString();
+            if (dt.Rows.Count > 0)
+            {
+                Session["AdminName"] = dt.Rows[0]["ANAME"].ToString();
+                Session["AdminRole"] = Convert.ToInt32(dt.Rows[0]["AROLE"]);
+            }
         }
 
         protected void Button1_Click1(object sender, EventArgs e)

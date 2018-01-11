@@ -10,7 +10,10 @@
     <div style="margin-left: 20%">
 
 
-        <h2>Admin Dashboard</h2>
+        <h2> <%if (Convert.ToInt32(Session["AdminRole"]) == 1)
+                 { %>Super <%} %>
+            
+            Admin Dashboard</h2>
         <hr />
 
 

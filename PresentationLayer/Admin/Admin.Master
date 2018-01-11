@@ -85,18 +85,7 @@
                         <li>
                             <a href="ManageManufacturer.aspx"><i class="fa fa-line-chart fa-fw"></i> Manufacturer</a>
                         </li>
-                        <%--<li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> State<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="{{url('subject/add')}}"><i class="fa fa-plus-circle fa-fw"></i> Add State</a>
-                                </li>
-                                <li>
-                                    <a href="{{url('subject/manage')}}"><i class="fa fa-edit fa-fw"></i> Manage State</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>--%>
+                        
                         <li>
                             <a href="#"><i class="fa fa-mobile fa-fw"></i> Product<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -115,38 +104,15 @@
                         <li>
                             <a href="OrderHistory.aspx"><i class="fa fa-cart-arrow-down fa-fw"></i> Order History</a>
                         </li>
-                        <%--<li>
-                            <a href="#"><i class="fa fa-bank fa-fw"></i> Question Bank<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                
-                                <li>
-                                    <a href="#"><i class="fa fa-hand-o-right fa-fw"></i> Broad Question <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="{{url('broad-question/add')}}"><i class="fa fa-plus-circle fa-fw"></i> Add</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{url('broad-question/manage')}}"><i class="fa fa-edit fa-fw"></i> Manage</a>
-                                        </li>
-                                    </ul>
-                                    <!-- /.nav-third-level -->
-                                </li>
-                                
-                            </ul>
-                            <!-- /.nav-second-level -->
+                        <%if (Convert.ToInt32(Session["AdminRole"]) == 1)
+                        { %>
+                        <li style="color:green">
+                            <a href="CreateAdmin.aspx" style="color:green"><i style="color:green" class="fa fa-user-plus fa-fw"></i> Create New Admin</a>
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-tags fa-fw"></i> Tags <span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="{{url('tag/add')}}"><i class="fa fa-plus-circle fa-fw"></i> Add Tags</a>
-                                </li>
-                                <li>
-                                    <a href="{{url('tag/manage')}}"><i class="fa fa-edit fa-fw"></i> Manage Tags</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>--%>
+                        <li style="color:red">
+                            <a href="ManageAdmin.aspx" style="color:orange"><i style="color:orange" class="fa fa-street-view fa-fw"></i> Manage Admins</a>
+                        </li>
+                        <%} %>
                     </ul><br>
                     <style>
             .buttonkuks{
@@ -187,10 +153,6 @@
 }
                     
                 </style>
-                <a href="{{url('/admin/register')}}"><button class="buttonkuks button1kuk" style"width:240px;"><i class="fa fa-user-plus fa-1x"></i><strong> Create New Admin &nbsp</strong></button></a>
-                <a href="{{url('/admin/manage')}}">
-                                <button style="width:240px;" class="buttonkuks button3kuk"><i class="fa fa-cogs fa-1x"></i><strong> Manage Admins</strong></button></a><hr>
-               
                 </div>
                 <!-- /.sidebar-collapse -->
             </div>

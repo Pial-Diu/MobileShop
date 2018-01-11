@@ -23,10 +23,10 @@
                     <ItemTemplate>
                         <tr>
                             <td style="border:1px solid black"> <%# Eval("id") %> </td>
-                            <td style="border:1px solid black"> <%# Eval("ocustomer") %> </td>
+                            <td style="border:1px solid black"> <%# Eval("cname") %> </td>
                             <td style="border:1px solid black"> <%# Eval("oamount" , "{0:c}") %></td>
                             <td style="border:1px solid black"> <%# Eval("odate", "{0:d}") %></td>
-                            <td></td>
+                            <td style="border:1px solid black"> <a href='OrderDetails.aspx?id=<%# Eval("id") %>' > Order Details </a> </td>
                         </tr>
 
                     </ItemTemplate>
