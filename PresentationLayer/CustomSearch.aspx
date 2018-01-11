@@ -45,8 +45,10 @@
         <asp:Button ID="Button1" Width="375px" Height="30px" runat="server" Text="Search" Font-Bold="True" Font-Size="Large" ForeColor="#F37037" OnClick="Button1_Click" />
     </div>
     <br>
-
-
+    <% if (Res == 0)
+        { %>
+    <h2 style="text-align:center;color:red">  No Results Found  </h2>
+    <%} %>
     <div style="width:100%;height:auto;">
         <asp:ListView ID="ListView1" runat="server">
         <ItemTemplate>

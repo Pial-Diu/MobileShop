@@ -14,13 +14,13 @@
 
 
     </style>
-
-        <div style="margin-left:30%; border:1px dashed #F37036; width:400px;">
+    <h1 style="text-align:center;color:#F37037;font-family:Ebrima"><u> Login as Customer </u></h1>
+        <div style="margin-left:33%; border:1px dashed #F37036; width:400px;">
             <h4 style="text-align:center;color:#F37036"> 
                 <asp:Label ID="txtMessage" runat="server" ForeColor="Red"></asp:Label>
             </h4>
 
-            <h3 style="text-align:center;color:#F37036"> Login as a Customer</h3>
+            
             <table style="margin-left:30px;margin-top:20px;">
             <tr style="width:90%;margin-left:5%">
                 <td class="title" style="width:20%"> Email: </td>
@@ -41,7 +41,7 @@
         </div>
     <h4 style="text-align:center">Don't have an account? Sign Up <a href="Register.aspx">here.</a></h4>
     <br/>
-    <div style="width:300px;height:30px;margin-left:35%">
+    <div style="width:300px;height:30px;margin-left:38%">
     <asp:Button Width="100%" Height="100%" Font-Bold="true" ForeColor="White" BackColor="#0033cc" ID="Button2" runat="server" Text="Admin Login" OnClick="Button2_Click" />
-    </div>
+    </div><br>
 </asp:Content>

@@ -65,6 +65,10 @@
             </tr>
         </table>
     <br>
+    <% if (Res == 0)
+        { %>
+    <h2 style="text-align:center;color:red">  No Results Found  </h2>
+    <%} %>
     <div style="width:100%;height:auto;">
         <asp:ListView ID="ListView1" runat="server">
         <ItemTemplate>

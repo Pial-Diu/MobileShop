@@ -13,6 +13,7 @@ namespace PresentationLayer
     {
         public string address = "";
         public string phone = "";
+        public float amount = 0; 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["User"] == null) Response.Redirect("Login.aspx");
@@ -118,6 +119,7 @@ namespace PresentationLayer
             DataTable dts = new DataTable();
             dts = (DataTable)Session["buyitems"];
             int cut = 0;
+            amount = 0;
             if (dts != null)
             {
                 Label1.Text = dts.Rows.Count.ToString();
@@ -126,6 +128,7 @@ namespace PresentationLayer
                     cut += Convert.ToInt32(dr["pprice"]);
                 }
                 Label2.Text = cut.ToString();
+                amount = (float)cut;
             }
             else
             {
@@ -161,7 +164,6 @@ namespace PresentationLayer
                     dt.Rows[i].Delete();
                     dt.AcceptChanges();
                     break;
-
                 }
             }
 
@@ -177,9 +179,51 @@ namespace PresentationLayer
 
         protected void Button2_Click(object sender, EventArgs e)
         {
+            if(Session["buyitems"] ==null)
+            {
+                Response.Write("<script>alert('Your Cart is Empty');</script>");
+                return;
+            }
+            Save_order();
             Session.Remove("buyitems");
-            //Response.Write("<script>alert('Order Confirmed');</script>");
             Response.Redirect("Home.aspx");
+        }
+        protected void Save_order()
+        {
+            DataTable dt = new DataTable();
+            dt = (DataTable)Session["buyitems"];
+
+            string ConString = "server=DESKTOP-QPN61SP ;database=DB_MOBILE_SHOP; Trusted_Connection=true;";
+            SqlConnection con = new SqlConnection(ConString);
+            string query = "insert into [TBL_ORDER](ocustomer,oamount) " +
+                    "values(@ocustomer,@oamount)";
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.Parameters.AddWithValue("@ocustomer", Convert.ToInt32(Session["User"]));
+            cmd.Parameters.AddWithValue("@oamount", amount);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+            //check size..
+            query = "select TOP 1 * from TBL_ORDER order by id DESC";
+            SqlCommand cmd2 = new SqlCommand(query, con);
+            con.Open();
+            SqlDataAdapter da = new SqlDataAdapter(cmd2);
+            DataTable dt2 = new DataTable();
+            da.Fill(dt2);
+            con.Close();
+            int size = Convert.ToInt32(dt2.Rows[0]["id"]);
+            //End Check size.
+            foreach(DataRow dtr in dt.Rows)
+            {
+                query = "insert into [ORDER_TRACK](orderid,productid) " +
+                    "values(@orderid,@productid)";
+                SqlCommand cmd3 = new SqlCommand(query, con);
+                cmd3.Parameters.AddWithValue("@orderid", size);
+                cmd3.Parameters.AddWithValue("@productid", Convert.ToInt32(dtr["id"]));
+                con.Open();
+                cmd3.ExecuteNonQuery();
+                con.Close();
+            }
         }
     }
 }

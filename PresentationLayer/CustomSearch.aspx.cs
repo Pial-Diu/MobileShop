@@ -12,6 +12,7 @@ namespace PresentationLayer
 {
     public partial class CustomSearch : System.Web.UI.Page
     {
+        public int Res = 1;
         public DataTable dt = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -74,6 +75,8 @@ namespace PresentationLayer
                 ListView1.DataSource = dt3;
                 ListView1.DataBind();
             }
+            if (dt3.Rows.Count == 0) Res = 0;
+            else Res = 1;
         }
     }
 }

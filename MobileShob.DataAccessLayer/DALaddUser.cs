@@ -13,11 +13,9 @@ namespace MobileShob.DataAccessLayer
     {
         public int DataAddUser(SqlParameter[] objData)
         {
-            
             int Result = 0;
             string ConString = "server=DESKTOP-QPN61SP ;database=DB_MOBILE_SHOP; Trusted_Connection=true;";
             SqlConnection con = new SqlConnection(ConString);
-            //return (int)8;
             SqlCommand objCommand = new SqlCommand("sp_INSERTUSER", con);
             objCommand.CommandType = CommandType.StoredProcedure;
             

@@ -90,6 +90,7 @@
     <Content Include="Admin\ManageManufacturer.aspx" />
     <Content Include="Admin\ManageProduct.aspx" />
     <Content Include="Admin\ManageState.aspx" />
+    <Content Include="Admin\OrderHistory.aspx" />
     <Content Include="Admin\vendor\bootstrap-social\bootstrap-social.css" />
     <Content Include="Admin\vendor\bootstrap\css\bootstrap.css" />
     <Content Include="Admin\vendor\bootstrap\css\bootstrap.min.css" />
@@ -337,6 +338,13 @@
     </Compile>
     <Compile Include="Admin\ManageState.aspx.designer.cs">
       <DependentUpon>ManageState.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrderHistory.aspx.cs">
+      <DependentUpon>OrderHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\OrderHistory.aspx.designer.cs">
+      <DependentUpon>OrderHistory.aspx</DependentUpon>
     </Compile>
     <Compile Include="BrandProducts.aspx.cs">
       <DependentUpon>BrandProducts.aspx</DependentUpon>

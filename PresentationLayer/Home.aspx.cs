@@ -13,6 +13,7 @@ namespace PresentationLayer
 {
     public partial class Home : System.Web.UI.Page
     {
+        public int Res = 1;
         public DataTable dt = new DataTable();
         public DataTable dt2 = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
@@ -54,6 +55,8 @@ namespace PresentationLayer
             con.Close();
             ListView1.DataSource = dt3;
             ListView1.DataBind();
+            if(dt3.Rows.Count == 0) Res = 0;
+            else Res = 1;
         }
     }
 }

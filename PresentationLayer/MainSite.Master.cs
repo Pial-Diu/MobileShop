@@ -30,6 +30,7 @@ namespace PresentationLayer
         protected void Button1_Click(object sender, EventArgs e)
         {
             Session.Remove("User");
+            Session.Remove("buyitems");
             Response.Redirect("Login.aspx");
         }
     }
