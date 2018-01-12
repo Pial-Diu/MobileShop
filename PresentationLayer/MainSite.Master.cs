@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace PresentationLayer
 {
@@ -14,7 +15,7 @@ namespace PresentationLayer
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["User"] == null) return;
-            string SqlConnectionString = "server=DESKTOP-QPN61SP ;database=DB_MOBILE_SHOP; Trusted_Connection=true;";
+            string SqlConnectionString = ConfigurationManager.ConnectionStrings["DB_MOBILE_SHOPConnectionString"].ConnectionString;
             SqlConnection Con = new SqlConnection(SqlConnectionString);
             string Query = "select * from [TBL_CUSTOMER] where id=@id";
             SqlCommand cmd = new SqlCommand(Query, Con);

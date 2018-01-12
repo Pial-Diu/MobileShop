@@ -9,6 +9,7 @@ using System.Data.SqlClient;
 using MobileShop.EntityLayer;
 using MobileShop.BusinessLayer;
 using System.IO;
+using System.Configuration;
 
 
 namespace PresentationLayer.Admin
@@ -26,7 +27,7 @@ namespace PresentationLayer.Admin
         }
         protected void Bind_Brand()
         {
-            string SqlConnectionString = "server=DESKTOP-QPN61SP ;database=DB_MOBILE_SHOP; Trusted_Connection=true;";
+            string SqlConnectionString = ConfigurationManager.ConnectionStrings["DB_MOBILE_SHOPConnectionString"].ConnectionString;
             SqlConnection con = new SqlConnection(SqlConnectionString);
             string Query = "select * from Manufacturer";
             con.Open();

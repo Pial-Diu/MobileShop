@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Collections;
+using System.Configuration;
 
 namespace PresentationLayer
 {
@@ -23,7 +24,7 @@ namespace PresentationLayer
         }
         private void Bind_Country()
         {
-            string SqlConnectionString = "server=DESKTOP-QPN61SP ;database=DB_MOBILE_SHOP; Trusted_Connection=true;";
+            string SqlConnectionString = ConfigurationManager.ConnectionStrings["DB_MOBILE_SHOPConnectionString"].ConnectionString;
             SqlConnection con = new SqlConnection(SqlConnectionString);
             string Query = "select * from Manufacturer";
             con.Open();

@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace PresentationLayer
 {
@@ -14,7 +15,7 @@ namespace PresentationLayer
         protected void Page_Load(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            string ConString = "server=DESKTOP-QPN61SP ;database=DB_MOBILE_SHOP; Trusted_Connection=true;";
+            string ConString = ConfigurationManager.ConnectionStrings["DB_MOBILE_SHOPConnectionString"].ConnectionString;
             SqlConnection con = new SqlConnection(ConString);
             SqlCommand objCommand = new SqlCommand("select * from Product ORDER BY ID desc;", con);
             con.Open();

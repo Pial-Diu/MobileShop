@@ -20,7 +20,7 @@ namespace PresentationLayer.Admin
         protected void Button1_Click(object sender, EventArgs e)
         {
             int Result = 0;
-            string ConString = "server=DESKTOP-QPN61SP ;database=DB_MOBILE_SHOP; Trusted_Connection=true;";
+            string ConString = ConfigurationManager.ConnectionStrings["DB_MOBILE_SHOPConnectionString"].ConnectionString;
             SqlConnection con = new SqlConnection(ConString);
             SqlCommand objCommand = new SqlCommand("insert into [admin] (aname,aemail,apassword,arole) " +
                 "values(@name,@email,@password,0)", con);

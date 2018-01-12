@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Collections;
+using System.Configuration;
 
 namespace PresentationLayer.Admin
 {
@@ -15,7 +16,7 @@ namespace PresentationLayer.Admin
         protected void Page_Load(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            string ConString = "server=DESKTOP-QPN61SP ;database=DB_MOBILE_SHOP; Trusted_Connection=true;";
+            string ConString = ConfigurationManager.ConnectionStrings["DB_MOBILE_SHOPConnectionString"].ConnectionString;
             SqlConnection con = new SqlConnection(ConString);
             SqlCommand objCommand = new SqlCommand("select o.id,o.ocustomer,o.odate,o.oamount,c.cname from Tbl_order o join tbl_customer c on c.id=o.ocustomer order by o.id desc", con);
             con.Open();

@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace PresentationLayer.Admin
 {
@@ -15,7 +16,7 @@ namespace PresentationLayer.Admin
         {
             if (Session["Admin"] == null) Response.Redirect("AdminLogin.aspx");
 
-            string SqlConnectionString = "server=DESKTOP-QPN61SP ;database=DB_MOBILE_SHOP; Trusted_Connection=true;";
+            string SqlConnectionString = ConfigurationManager.ConnectionStrings["DB_MOBILE_SHOPConnectionString"].ConnectionString;
             SqlConnection Con = new SqlConnection(SqlConnectionString);
             string Query = "select * from [ADMIN] where id=@id";
             SqlCommand cmd = new SqlCommand(Query, Con);

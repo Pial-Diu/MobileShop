@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace MobileShob.DataAccessLayer
 {
@@ -14,7 +15,7 @@ namespace MobileShob.DataAccessLayer
         {
 
             int Result = 0;
-            string ConString = "server=DESKTOP-QPN61SP ;database=DB_MOBILE_SHOP; Trusted_Connection=true;";
+            string ConString = ConfigurationManager.ConnectionStrings["DB_MOBILE_SHOPConnectionString"].ConnectionString;
             SqlConnection con = new SqlConnection(ConString);
             SqlCommand objCommand = new SqlCommand("sp_INSERTCOUNTRY", con)
             {

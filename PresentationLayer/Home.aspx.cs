@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Collections;
-
+using System.Configuration;
 
 namespace PresentationLayer
 {
@@ -21,8 +21,8 @@ namespace PresentationLayer
             //if (!Page.IsPostBack)
             //{
             //ListView1.Visible = true;
-                string ConString = "server=DESKTOP-QPN61SP ;database=DB_MOBILE_SHOP; Trusted_Connection=true;";
-                SqlConnection con = new SqlConnection(ConString);
+                string ConString = ConfigurationManager.ConnectionStrings["DB_MOBILE_SHOPConnectionString"].ConnectionString;
+            SqlConnection con = new SqlConnection(ConString);
                 SqlCommand objCommand = new SqlCommand("select * from Product", con);
                 con.Open();
                 SqlDataAdapter da = new SqlDataAdapter(objCommand);
@@ -45,7 +45,7 @@ namespace PresentationLayer
         protected void Button1_Click1(object sender, EventArgs e)
         {
             DataTable dt3 = new DataTable();
-            string ConString = "server=DESKTOP-QPN61SP ;database=DB_MOBILE_SHOP; Trusted_Connection=true;";
+            string ConString = ConfigurationManager.ConnectionStrings["DB_MOBILE_SHOPConnectionString"].ConnectionString;
             SqlConnection con = new SqlConnection(ConString);
             SqlCommand obj = new SqlCommand("select * from product where pmodel like @model or pbrand like @model", con);
             obj.Parameters.AddWithValue("@model", '%' + TextBox1.Text + '%');
